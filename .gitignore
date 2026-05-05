@@ -1,0 +1,26 @@
+# Home Assistant runtime files
+test-ha/config/.storage/
+test-ha/config/.HA_VERSION
+test-ha/config/.ha_run.lock
+test-ha/config/home-assistant.log*
+test-ha/config/custom_components/**/__pycache__/
+test-ha/screenshot-*.png
+
+# Playwright CLI artifacts
+.playwright-cli/console-*.log
+.playwright-cli/page-*.yml
+test-ha/.playwright-cli/
+
+# Auth / secrets
+ha-auth.json
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
