@@ -1,0 +1,31 @@
+# 感測器範例 - Sensors Example
+# 在 configuration.yaml 中用 sensor: !include includes/sensors.yaml
+
+- platform: template
+  sensors:
+    house_temperature_avg:
+      friendly_name: "全屋平均溫度"
+      unit_of_measurement: "°C"
+      value_template: >
+        {{ ((states('sensor.living_room_temp') | float +
+             states('sensor.bedroom_temp') | float +
+             states('sensor.kitchen_temp') | float) / 3) | round(1) }}
+
+    electricity_cost_today:
+      friendly_name: "今日電費"
+      unit_of_measurement: "TWD"
+      value_template: >
+        {{ (states('sensor.daily_energy') | float * 4.5) | round(2) }}
+
+- platform: rest
+  name: "空氣品質 AQI"
+  resource: "https://api.example.com/aqi"
+  value_template: "{{ value_json.aqi }}"
+  unit_of_measurement: "AQI"
+  scan_interval: 1800
+
+- platform: time_date
+  display_options:
+    - "time"
+    - "date"
+    - "date_time"

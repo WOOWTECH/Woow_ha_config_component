@@ -1,0 +1,44 @@
+# 場景範例 - Scenes Example
+
+- name: "電影模式"
+  icon: "mdi:movie-open"
+  entities:
+    light.living_room:
+      state: "on"
+      brightness: 30
+      color_temp: 500
+    light.kitchen:
+      state: "off"
+    media_player.tv:
+      state: "on"
+    switch.soundbar:
+      state: "on"
+
+- name: "閱讀模式"
+  icon: "mdi:book-open"
+  entities:
+    light.living_room:
+      state: "on"
+      brightness: 200
+      color_temp: 250
+    light.desk_lamp:
+      state: "on"
+      brightness: 255
+    media_player.tv:
+      state: "off"
+
+- name: "離家模式"
+  icon: "mdi:home-export-outline"
+  entities:
+    light.living_room:
+      state: "off"
+    light.bedroom:
+      state: "off"
+    light.kitchen:
+      state: "off"
+    switch.tv_power:
+      state: "off"
+    climate.living_room:
+      state: "off"
+    lock.front_door:
+      state: "locked"

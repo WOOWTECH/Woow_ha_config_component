@@ -1,0 +1,46 @@
+# 自動化範例 - Automations Example
+# 此檔案可在 Config Editor 中直接編輯
+
+- id: "morning_routine"
+  alias: "早晨例行程序"
+  description: "每天早上 7 點自動開燈並播放音樂"
+  trigger:
+    - platform: time
+      at: "07:00:00"
+  condition:
+    - condition: state
+      entity_id: binary_sensor.workday_sensor
+      state: "on"
+  action:
+    - service: light.turn_on
+      target:
+        entity_id: light.bedroom
+      data:
+        brightness: 150
+        color_temp: 300
+    - service: media_player.play_media
+      target:
+        entity_id: media_player.bedroom_speaker
+      data:
+        media_content_id: "https://example.com/morning-playlist"
+        media_content_type: "music"
+    - delay: "00:30:00"
+    - service: light.turn_on
+      target:
+        entity_id: light.bedroom
+      data:
+        brightness: 255
+
+- id: "night_mode"
+  alias: "夜間模式"
+  description: "晚上 11 點自動關閉所有燈光"
+  trigger:
+    - platform: time
+      at: "23:00:00"
+  action:
+    - service: light.turn_off
+      target:
+        entity_id: all
+    - service: switch.turn_off
+      target:
+        entity_id: switch.tv_power

@@ -1,0 +1,43 @@
+# 能源儀表板範例 - Energy Dashboard Config
+
+title: "能源監控"
+views:
+  - title: "用電概覽"
+    icon: "mdi:flash"
+    cards:
+      - type: energy-distribution
+        title: "能源分配"
+
+      - type: gauge
+        entity: sensor.daily_energy
+        name: "今日用電"
+        unit: "kWh"
+        min: 0
+        max: 50
+        severity:
+          green: 0
+          yellow: 20
+          red: 35
+
+      - type: history-graph
+        title: "過去 24 小時用電趨勢"
+        hours_to_show: 24
+        entities:
+          - entity: sensor.hourly_energy
+            name: "每小時用電"
+
+  - title: "太陽能"
+    icon: "mdi:solar-power"
+    cards:
+      - type: sensor
+        entity: sensor.solar_production
+        name: "太陽能發電量"
+        graph: line
+
+      - type: entities
+        title: "太陽能詳情"
+        entities:
+          - sensor.solar_production
+          - sensor.solar_daily_total
+          - sensor.grid_consumption
+          - sensor.grid_feed_in

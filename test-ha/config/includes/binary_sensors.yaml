@@ -1,0 +1,22 @@
+# 二元感測器範例 - Binary Sensors Example
+
+- platform: template
+  sensors:
+    someone_home:
+      friendly_name: "有人在家"
+      device_class: presence
+      value_template: >
+        {{ is_state('person.user_1', 'home') or
+           is_state('person.user_2', 'home') }}
+
+    house_secure:
+      friendly_name: "全屋安全"
+      device_class: safety
+      value_template: >
+        {{ is_state('lock.front_door', 'locked') and
+           is_state('lock.back_door', 'locked') and
+           is_state('binary_sensor.window_living_room', 'off') }}
+
+- platform: workday
+  country: TW
+  name: "工作日"

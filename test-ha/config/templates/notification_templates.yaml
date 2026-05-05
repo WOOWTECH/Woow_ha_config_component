@@ -1,0 +1,34 @@
+# 通知模板範例 - Notification Templates
+
+- trigger:
+    - platform: state
+      entity_id: binary_sensor.front_door
+      to: "on"
+  sensor:
+    - name: "前門開啟通知訊息"
+      state: >
+        {% set time = now().strftime('%H:%M') %}
+        {% if is_state('alarm_control_panel.home_alarm', 'armed_away') %}
+          ⚠️ 警告：前門在設防狀態下於 {{ time }} 被開啟！
+        {% else %}
+          前門於 {{ time }} 開啟
+        {% endif %}
+
+- sensor:
+    - name: "天氣摘要"
+      state: >
+        {% set temp = states('sensor.outdoor_temp') | float %}
+        {% set humidity = states('sensor.outdoor_humidity') | float %}
+        {% if temp > 35 %}
+          🔥 高溫警告：室外 {{ temp }}°C，濕度 {{ humidity }}%
+        {% elif temp < 10 %}
+          🥶 低溫提醒：室外 {{ temp }}°C，注意保暖
+        {% else %}
+          ☀️ 室外 {{ temp }}°C，濕度 {{ humidity }}%
+        {% endif %}
+
+    - name: "每日能源報告"
+      state: >
+        {% set kwh = states('sensor.daily_energy') | float %}
+        {% set cost = (kwh * 4.5) | round(0) %}
+        今日用電 {{ kwh | round(1) }} kWh，約 NT${{ cost }}

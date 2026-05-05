@@ -1,0 +1,47 @@
+# 腳本範例 - Scripts Example
+
+notify_all_devices:
+  alias: "通知所有裝置"
+  description: "發送通知到所有行動裝置"
+  fields:
+    title:
+      description: "通知標題"
+      example: "Home Alert"
+    message:
+      description: "通知內容"
+      example: "Something happened at home"
+  sequence:
+    - service: notify.mobile_app_phone_1
+      data:
+        title: "{{ title }}"
+        message: "{{ message }}"
+    - service: notify.mobile_app_phone_2
+      data:
+        title: "{{ title }}"
+        message: "{{ message }}"
+
+toggle_all_lights:
+  alias: "切換所有燈光"
+  description: "一鍵切換全屋燈光開關"
+  sequence:
+    - choose:
+        - conditions:
+            - condition: state
+              entity_id: light.living_room
+              state: "on"
+          sequence:
+            - service: light.turn_off
+              target:
+                entity_id: all
+        - conditions:
+            - condition: state
+              entity_id: light.living_room
+              state: "off"
+          sequence:
+            - service: light.turn_on
+              target:
+                entity_id:
+                  - light.living_room
+                  - light.kitchen
+              data:
+                brightness: 200

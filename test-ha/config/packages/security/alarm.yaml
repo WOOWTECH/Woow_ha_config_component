@@ -1,0 +1,52 @@
+# 警報系統套件 - Security Alarm Package
+
+alarm_control_panel:
+  - platform: manual
+    name: "居家警報"
+    code: "1234"
+    arming_time: 30
+    delay_time: 20
+    trigger_time: 120
+    disarmed:
+      trigger_time: 0
+    armed_home:
+      arming_time: 0
+      delay_time: 0
+
+automation:
+  - id: "alarm_triggered_notification"
+    alias: "警報觸發通知"
+    trigger:
+      - platform: state
+        entity_id: alarm_control_panel.home_alarm
+        to: "triggered"
+    action:
+      - service: notify.all_devices
+        data:
+          title: "警報觸發！"
+          message: "居家警報系統已觸發，請立即確認。"
+          data:
+            priority: high
+            channel: alarm
+      - service: light.turn_on
+        target:
+          entity_id: all
+        data:
+          brightness: 255
+          flash: long
+
+  - id: "auto_arm_night"
+    alias: "夜間自動設防"
+    trigger:
+      - platform: time
+        at: "23:30:00"
+    condition:
+      - condition: state
+        entity_id: alarm_control_panel.home_alarm
+        state: "disarmed"
+    action:
+      - service: alarm_control_panel.alarm_arm_night
+        target:
+          entity_id: alarm_control_panel.home_alarm
+        data:
+          code: "1234"
