@@ -1,0 +1,15 @@
+[     152ms] Object
+[     654ms] [INFO] Config Editor Fullpage 1.0.0 @ http://localhost:15130/local/config-editor-fullpage.js?v=2:0
+[    2091ms] Object
+[    2464ms] [INFO] Config Editor Fullpage 1.0.0 @ http://localhost:15130/local/config-editor-fullpage.js?v=2:0
+[   79040ms] [INFO] Config Editor Fullpage 1.0.0 @ http://localhost:15130/local/config-editor-fullpage.js?v=2:0
+[  170817ms] Error: timeout
+    at eval (eval at evaluate (:302:30), <anonymous>:7:80)
+[  171730ms] Error: WebSocket connection failed
+    at el._hass.callWS (eval at evaluate (:302:30), <anonymous>:6:44)
+    at ConfigEditorFullpage.cmd (http://localhost:15130/local/config-editor-fullpage.js?v=2:346:20)
+    at ConfigEditorFullpage.List (http://localhost:15130/local/config-editor-fullpage.js?v=2:406:23)
+    at eval (eval at evaluate (:302:30), <anonymous>:9:10)
+    at UtilityScript.evaluate (<anonymous>:304:16)
+    at UtilityScript.<anonymous> (<anonymous>:1:44)
+[  431221ms] [INFO] Config Editor Fullpage 1.0.0 @ http://localhost:15130/local/config-editor-fullpage.js?v=2:0
