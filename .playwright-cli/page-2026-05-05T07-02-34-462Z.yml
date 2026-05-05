@@ -1,0 +1,166 @@
+- generic [ref=e4]:
+  - complementary [ref=e5]:
+    - generic [ref=e7]:
+      - generic [ref=e8]:
+        - generic "Sidebar toggle" [ref=e10]:
+          - button "Sidebar toggle" [ref=e11] [cursor=pointer]:
+            - generic [ref=e13]:
+              - img
+        - generic [ref=e14]: Home Assistant
+      - generic [ref=e15]:
+        - generic:
+          - listitem [ref=e17] [cursor=pointer]:
+            - generic [ref=e18]:
+              - generic [ref=e19]:
+                - img
+              - generic [ref=e21]: Overview
+          - listitem [ref=e23] [cursor=pointer]:
+            - generic [ref=e24]:
+              - generic [ref=e26]:
+                - img
+              - generic [ref=e28]: Config Editor
+          - listitem [ref=e30] [cursor=pointer]:
+            - generic [ref=e31]:
+              - generic [ref=e32]:
+                - img
+              - generic [ref=e34]: Map
+          - listitem [ref=e36] [cursor=pointer]:
+            - generic [ref=e37]:
+              - generic [ref=e38]:
+                - img
+              - generic [ref=e40]: To-do lists
+          - listitem [ref=e42] [cursor=pointer]:
+            - generic [ref=e43]:
+              - generic [ref=e44]:
+                - img
+              - generic [ref=e46]: Developer tools
+          - listitem [ref=e48] [cursor=pointer]:
+            - generic [ref=e49]:
+              - generic [ref=e50]:
+                - img
+              - generic [ref=e52]: Settings
+              - generic [ref=e53]: "1"
+      - generic [ref=e55]:
+        - generic:
+          - listitem [ref=e57] [cursor=pointer]:
+            - generic [ref=e58]:
+              - generic [ref=e59]:
+                - img
+              - generic [ref=e61]: Notifications
+              - generic [ref=e62]: "1"
+          - listitem [ref=e64] [cursor=pointer]:
+            - generic [ref=e65]:
+              - generic [ref=e67]: A
+              - generic [ref=e69]: Admin
+  - generic [ref=e74]:
+    - generic [ref=e77]:
+      - generic [ref=e78]: Config Editor
+      - generic [ref=e79]:
+        - generic [ref=e80]:
+          - button "Add to Home Assistant" [ref=e84] [cursor=pointer]:
+            - generic [ref=e86]:
+              - img
+          - generic:
+            - generic:
+              - generic: Add device
+              - generic: Create automation
+              - generic: Create area
+              - generic: Add person
+        - button [ref=e89] [cursor=pointer]:
+          - generic [ref=e91]:
+            - img
+        - button [ref=e94] [cursor=pointer]:
+          - generic [ref=e96]:
+            - img
+    - generic [ref=e102]:
+      - generic [ref=e103]:
+        - generic [ref=e104]:
+          - button "Save" [ref=e105] [cursor=pointer]
+          - button "Reload" [ref=e106] [cursor=pointer]
+        - combobox [ref=e107]:
+          - option "— Select file —"
+          - option "blueprints/automation/homeassistant/motion_light.yaml"
+          - option "blueprints/automation/homeassistant/notify_leaving_zone.yaml"
+          - option "blueprints/script/homeassistant/confirmable_notification.yaml"
+          - option "configuration.yaml" [selected]
+        - button "List" [ref=e109] [cursor=pointer]
+        - generic [ref=e110]:
+          - combobox [ref=e111]:
+            - option "YAML" [selected]
+            - option "PY"
+            - option "JSON"
+            - option "CONF"
+            - option "JS"
+            - option "TXT"
+            - option "LOG"
+            - option "JINJA"
+            - option "ALL"
+          - button "−" [ref=e112] [cursor=pointer]
+          - button "A" [ref=e113] [cursor=pointer]
+          - button "+" [ref=e114] [cursor=pointer]
+          - generic [ref=e115] [cursor=pointer]:
+            - checkbox "Basic" [ref=e116]
+            - text: Basic
+      - generic [ref=e119]:
+        - generic [ref=e120]:
+          - generic [ref=e121]:
+            - generic [ref=e122]:
+              - generic [ref=e123]: "1"
+              - generic [ref=e124]: "2"
+              - generic [ref=e125]: "3"
+              - generic [ref=e126]: "4"
+              - generic [ref=e127]: "5"
+              - generic [ref=e128]: "6"
+              - generic [ref=e129]: "7"
+              - generic [ref=e130]: "8"
+              - generic [ref=e131]: "9"
+              - generic [ref=e132]: "10"
+              - generic [ref=e133]: "11"
+              - generic [ref=e134]: "12"
+              - generic [ref=e135]: "13"
+              - generic [ref=e136]: "14"
+              - generic [ref=e137]: "15"
+              - generic [ref=e138]: "16"
+              - generic [ref=e139]: "17"
+              - generic [ref=e140]: "18"
+            - generic [ref=e141]:
+              - generic [ref=e142]: ⌄
+              - generic [ref=e143]: ⌄
+              - generic [ref=e144]: ⌄
+              - generic [ref=e145]: ⌄
+          - textbox [ref=e146]:
+            - generic [ref=e147]: "homeassistant:"
+            - generic [ref=e148]: "name: HA Config Editor Test"
+            - generic [ref=e149]: "unit_system: metric"
+            - generic [ref=e150]: "time_zone: Asia/Taipei"
+            - generic [ref=e152]: "http:"
+            - generic [ref=e154]: "frontend:"
+            - generic [ref=e156]: "config_editor:"
+            - generic [ref=e158]: "lovelace:"
+            - generic [ref=e159]: "mode: storage"
+            - generic [ref=e160]: "resources:"
+            - generic [ref=e161]: "- url: /local/config-editor-fullpage.js"
+            - generic [ref=e162]: "type: module"
+            - generic [ref=e164]: "# test comment added by playwright"
+        - generic [ref=e166]:
+          - generic:
+            - generic "Undo" [ref=e168] [cursor=pointer]:
+              - button "Undo" [ref=e169]:
+                - generic [ref=e171]:
+                  - img
+            - generic:
+              - generic "Redo":
+                - button "Redo" [disabled]:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - img
+            - generic "Copy to clipboard" [ref=e173] [cursor=pointer]:
+              - button "Copy to clipboard" [ref=e174]:
+                - generic [ref=e176]:
+                  - img
+            - generic "Enter fullscreen" [ref=e178] [cursor=pointer]:
+              - button "Enter fullscreen" [ref=e179]:
+                - generic [ref=e181]:
+                  - img
+      - code [ref=e183]: "Loaded: /config/configuration.yaml"

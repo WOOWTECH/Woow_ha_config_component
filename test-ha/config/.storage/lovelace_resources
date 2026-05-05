@@ -6,7 +6,7 @@
     "items": [
       {
         "id": "cc633d26e43f4d92a47c9e14cdff700b",
-        "url": "/local/config-editor-fullpage.js",
+        "url": "/local/config-editor-fullpage.js?v=2",
         "type": "module"
       }
     ]
