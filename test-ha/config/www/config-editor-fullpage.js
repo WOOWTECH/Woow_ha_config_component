@@ -296,9 +296,9 @@ txtSize(e) {
 		if (e > 1) {
 			this.edit.size = 100;
 		} else if (e > 0) {
-			this.edit.size += 5;
+			this.edit.size = Math.min(this.edit.size + 5, 300);
 		} else {
-			this.edit.size -= 5;
+			this.edit.size = Math.max(this.edit.size - 5, 30);
 		}
 		this.localSet('Size', this.edit.size);
 		this.infoLine = 'size: ' + this.edit.size;
