@@ -1,0 +1,9 @@
+services:
+  homeassistant:
+    container_name: ha-config-editor-test
+    image: ghcr.io/home-assistant/home-assistant:stable
+    volumes:
+      - ./config:/config
+    ports:
+      - "15130:8123"
+    restart: unless-stopped

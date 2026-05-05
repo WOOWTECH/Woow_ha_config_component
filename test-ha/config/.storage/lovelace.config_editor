@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "minor_version": 1,
+  "key": "lovelace.config_editor",
+  "data": {
+    "config": {
+      "views": [
+        {
+          "title": "Config Editor",
+          "panel": true,
+          "cards": [
+            {
+              "type": "custom:config-editor-fullpage",
+              "depth": 3
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
