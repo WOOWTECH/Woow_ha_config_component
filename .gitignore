@@ -1,10 +1,19 @@
 # Home Assistant runtime files
 test-ha/config/.storage/
+!test-ha/config/.storage/lovelace.config_editor
 test-ha/config/.HA_VERSION
 test-ha/config/.ha_run.lock
 test-ha/config/home-assistant.log*
+test-ha/config/home-assistant_v2.db*
 test-ha/config/custom_components/**/__pycache__/
 test-ha/screenshot-*.png
+
+# Theme files (belong to Woow_ha_theme repo, not here)
+test-ha/config/themes/
+test-ha/config/www/frosted-glass-themes/
+test-ha/config/www/ios-themes/
+test-ha/config/www/visionos-themes/
+test-ha/theme-screenshots/
 
 # Playwright CLI artifacts
 .playwright-cli/console-*.log
@@ -13,7 +22,12 @@ test-ha/.playwright-cli/
 
 # Auth / secrets
 ha-auth.json
+ha-auth-state.json
+.env.ha-token
 *.pyc
+
+# Dependencies
+node_modules/
 
 # OS
 .DS_Store
