@@ -18,6 +18,12 @@ test-ha/theme-screenshots/
 # Playwright CLI artifacts
 .playwright-cli/console-*.log
 .playwright-cli/page-*.yml
+.playwright-cli/theme-test-all.js
+.playwright-cli/run-theme-tests.js
+.playwright-cli/test-single-theme.js
+.playwright-cli/verify-themes.js
+.playwright-cli/verify-files.js
+.playwright-cli/ws-test.js
 test-ha/.playwright-cli/
 
 # Auth / secrets
