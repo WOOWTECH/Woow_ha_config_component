@@ -1,0 +1,54 @@
+# 冷氣套件範例 - Climate Package Example
+# Packages 模式：一個檔案包含相關的所有設定
+
+climate:
+  - platform: generic_thermostat
+    name: "客廳冷氣"
+    heater: switch.ac_living_room
+    target_sensor: sensor.living_room_temp
+    min_temp: 18
+    max_temp: 30
+    target_temp: 25
+    cold_tolerance: 0.5
+    hot_tolerance: 0.5
+    ac_mode: true
+
+automation:
+  - id: "ac_auto_on"
+    alias: "溫度過高自動開冷氣"
+    trigger:
+      - platform: numeric_state
+        entity_id: sensor.living_room_temp
+        above: 28
+    condition:
+      - condition: state
+        entity_id: binary_sensor.someone_home
+        state: "on"
+    action:
+      - service: climate.set_temperature
+        target:
+          entity_id: climate.living_room_ac
+        data:
+          temperature: 25
+          hvac_mode: cool
+
+  - id: "ac_auto_off"
+    alias: "無人在家關冷氣"
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.someone_home
+        to: "off"
+        for: "00:10:00"
+    action:
+      - service: climate.turn_off
+        target:
+          entity_id: climate.living_room_ac
+
+sensor:
+  - platform: template
+    sensors:
+      ac_running_hours:
+        friendly_name: "冷氣今日運行時數"
+        unit_of_measurement: "h"
+        value_template: >
+          {{ states('sensor.ac_daily_runtime') | float | round(1) }}

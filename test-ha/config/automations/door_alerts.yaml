@@ -1,0 +1,31 @@
+# 門窗警報自動化 - Door Alert Automations
+
+- id: "front_door_open_too_long"
+  alias: "前門開啟過久提醒"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.front_door
+      to: "on"
+      for: "00:05:00"
+  action:
+    - service: notify.mobile_app_phone
+      data:
+        title: "門窗提醒"
+        message: "前門已開啟超過 5 分鐘"
+
+- id: "window_open_rain"
+  alias: "下雨時窗戶開啟提醒"
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.window_living_room
+      to: "on"
+  condition:
+    - condition: state
+      entity_id: weather.home
+      attribute: condition
+      state: "rainy"
+  action:
+    - service: notify.mobile_app_phone
+      data:
+        title: "⚠️ 窗戶提醒"
+        message: "正在下雨，客廳窗戶仍然開著！"

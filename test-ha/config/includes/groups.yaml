@@ -1,0 +1,36 @@
+# 群組範例 - Groups Example
+
+living_room_lights:
+  name: "客廳燈光"
+  icon: "mdi:lightbulb-group"
+  entities:
+    - light.living_room_main
+    - light.living_room_ambient
+    - light.living_room_strip
+
+bedroom_lights:
+  name: "臥室燈光"
+  icon: "mdi:bed"
+  entities:
+    - light.bedroom_main
+    - light.bedroom_reading
+    - light.bedroom_nightlight
+
+all_motion_sensors:
+  name: "所有動作感測器"
+  icon: "mdi:motion-sensor"
+  entities:
+    - binary_sensor.motion_living_room
+    - binary_sensor.motion_kitchen
+    - binary_sensor.motion_hallway
+    - binary_sensor.motion_bedroom
+
+security_devices:
+  name: "安全裝置"
+  icon: "mdi:shield-home"
+  entities:
+    - lock.front_door
+    - lock.back_door
+    - binary_sensor.window_living_room
+    - binary_sensor.window_bedroom
+    - alarm_control_panel.home_alarm
