@@ -1,0 +1,7 @@
+2026-05-06 15:28:25.434 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration config_editor which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-05-06 15:28:25.435 WARNING (SyncWorker_0) [homeassistant.loader] We found a custom integration config_editor which has not been tested by Home Assistant. This component might cause stability problems, be sure to disable it if you experience issues with Home Assistant
+2026-05-06 15:28:29.413 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from f757ba6966ac (10.89.47.2). Requested URL: '/api/'. (curl/8.5.0)
+2026-05-06 15:28:30.748 ERROR (SyncWorker_0) [aiodhcpwatcher] Cannot watch for dhcp packets: [Errno 1] Operation not permitted
+2026-05-06 15:28:48.323 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from f757ba6966ac (10.89.47.2). Requested URL: '/auth/token'. (curl/8.5.0)
+2026-05-06 15:28:53.657 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from f757ba6966ac (10.89.47.2). Requested URL: '/auth/token'. (curl/8.5.0)
+2026-05-06 15:29:00.929 WARNING (MainThread) [homeassistant.components.http.ban] Login attempt or request with invalid authentication from f757ba6966ac (10.89.47.2). Requested URL: '/auth/token'. (curl/8.5.0)
